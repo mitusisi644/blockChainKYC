@@ -15,7 +15,7 @@
         name: "financeForm",
         data(){
             return {
-              formData: []//["agencyId","areaId","countryId","companyName"]
+              formData: []
             }
         },
         methods:{
@@ -24,20 +24,19 @@
             }
         },
         created: function() {
-            if(!this.$route.params){
-                this.$route.path({name:'finance'});
-                return false;
-            };
-            //console.log(this.$route.params.tableTh)
+			var _this = this;
             var obj = this.$route.params.tableTh;
+            if(!obj || this.$route.params.tableTh == 'undefined'){
+				_this.$router.push('/finance');
+                return true;
+            };
             obj.map((item,index)=>{
               console.log(item.key);
-              //this.formData.push(item.key);
+              _this.formData.push(item.key);
             });
         },
     }
 </script>
 
 <style scoped>
-
 </style>

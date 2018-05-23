@@ -61,19 +61,20 @@
       "description": "This is ",
       "disabled": false
     },
-    "amount": {
+    "ratioMeter": {
+      "type": "string",
+      "default": "",
+      "value":"workingFund/fundObligation",
+      "description": "This is ",
+      "disabled": true
+    },
+    "fundObligation": {
       "type": "string",
       "default": "",
       "description": "This is ",
       "disabled": false
     },
-    "currency": {
-      "type": "string",
-      "default": "",
-      "description": "This is ",
-      "disabled": false
-    },
-    "owner": {
+    "workingFund": {
       "type": "string",
       "default": "",
       "description": "This is ",
