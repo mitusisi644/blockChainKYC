@@ -1,0 +1,112 @@
+<template>
+  <div>
+    <!--数据-->
+    <el-table
+      :data="itemData"
+      border
+      style="width: 100%">
+      <el-table-column
+        :prop="index"
+        :label="item.name"
+        v-for="(item,index) in itemGS" :key="index">
+      </el-table-column>
+    </el-table>
+    <!--添加-->
+    <div class="add-btn"><i-button type="primary" :disabled="itemAddBtn" @click="addNewRecode()">add+</i-button></div>
+    <!--表单-->
+    <div class="add-new-recode-form" v-show="itemAddBtn">
+      <div class="line-fg"></div>
+      <div class="add-form">
+        <i-form label-position="right" :label-width="100">
+          <Form-item :label="item.name" v-for="(item,index) in itemTitle" class="lss-input-item" :key="index">
+            <i-input v-model="itemTitle[index]['val']"></i-input>
+          </Form-item>
+        </i-form>
+      </div>
+      <div class="lss-submit-btn"><i-button type="primary" size="large">确认提交</i-button>&nbsp;&nbsp;<i-button @click="itemAddBtn = !itemAddBtn" type="primary" size="large">&nbsp;&nbsp;&nbsp;取消&nbsp;&nbsp;&nbsp;</i-button></div>
+      <div class="add-result">
+        <p v-for="(item,index,key) in itemGS" :class="'lss-bg-'+bgColor[key]" v-if="eval(item.js) ?  true : false">
+          <span class="add-result-title">{{ item.name }}</span><span class="add-result-val">{{eval(item.js)}}</span><span class="add-result-des">{{item.jisuan}}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    props: ["itemData","itemTitle","itemGS"],
+    data (){
+      return {
+        bgColor:["0c91e5","green","aa0d79","49b3be","ff78e2","eaa810","yellow","red","blue"],
+        itemAddBtn:false,
+
+      }
+    },
+    methods:{
+      eval:function (d) {
+        if(isNaN(eval(d)) || eval(d) == Infinity || eval(d) == -Infinity){
+          return "";
+        }else{
+          return eval(d);
+        }
+      },
+      addNewRecode:function () {
+        this.itemAddBtn = !this.itemAddBtn;
+      }
+    }
+  }
+</script>
+
+<style scoped>
+  .line-fg {width: 100%; height: 2px;
+    overflow: hidden;
+    background:#0c91e5;
+  }
+  .add-btn {
+    width: 100%;
+    height: auto;
+    overflow: hidden; margin: 10px 0px 20px;
+    text-align: right;
+  }
+  .lss-submit-btn,.add-form,.add-result,.add-new-recode-form {
+    width: 100%; height: auto;overflow: hidden;
+  }
+  .lss-submit-btn { text-align: right;}
+  .add-form { padding-top:20px;}
+  .lss-input-item {
+    display:block;float: left; width: 300px;
+  }
+  .add-result {
+    padding:30px 20px 0px;
+  }
+  .add-result p {
+    display: inline-block; width: auto; height:auto;
+    text-align: center; position: relative;
+    margin:0px 5px; color:#fff; padding-top:15px;
+  }
+  .add-result p span {
+    display: block; width: 100%; height: auto;
+    overflow: hidden; padding:0px 20px;
+  }
+  .add-result-title {
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .add-result-val {
+    font-weight: bold;
+    font-size: 30px; line-height: 60px;
+  }
+  .add-result-des {
+    font-size: 12px;color: rgba(255,255,255,0.4);
+  }
+  .lss-bg-green { background: green;}
+  .lss-bg-0c91e5 {background: #0c91e5;}
+  .lss-bg-aa0d79 {background: #aa0d79;}
+  .lss-bg-49b3be {background: #49b3be;}
+  .lss-bg-ff78e2 {background: #ff78e2;}
+  .lss-bg-eaa810 {background: #eaa810;}
+  .lss-bg-yellow {background: yellow;}
+  .lss-bg-red {background: red;}
+  .lss-bg-blue {background: blue;}
+</style>

@@ -2,20 +2,24 @@
   <div class="right-menu">
     <Menu :theme="theme" :active-name="activeIndex" width="200" @on-select="route">
       <MenuGroup title="统计分析">
-        <MenuItem name="market">
-          <Icon type="stats-bars"></Icon>
-          复仇者联盟
+        <MenuItem name="/">
+          <Icon type="android-home"></Icon>
+          H-KYC
         </MenuItem>
         <MenuItem name="finance">
           <Icon type="pie-graph"></Icon>
           芳华
+        </MenuItem>
+        <MenuItem name="market">
+          <Icon type="stats-bars"></Icon>
+          复仇者联盟
         </MenuItem>
         <MenuItem name="discuss">
           <Icon type="earth"></Icon>
           红海行动
         </MenuItem>
       </MenuGroup>
-      <MenuItem name="/">
+      <MenuItem name="about">
         <Icon type="ios-pulse-strong"></Icon>
         ABOUT
       </MenuItem>
@@ -24,16 +28,18 @@
 </template>
 <script>
     var menus = {
+        "home":"/",
         "financeForm": "finance",
         "finance": "finance",
         "discuss": "discuss",
-        "market": "market"
+        "market": "market",
+        "about": "about"
     };
     export default {
       name: "MenuNav",
       data(){
           return {
-            activeIndex:menus[this.$route.path.replace('/','')]
+            activeIndex:menus[this.$route.path.replace('/','')] ? menus[this.$route.path.replace('/','')] : '/'
           }
       },
       methods: {
