@@ -18,15 +18,15 @@
       <div class="line-fg"></div>
       <div class="add-form">
         <i-form label-position="right" :label-width="100">
-          <Form-item :label="item.name" v-for="(item,index) in itemTitle" class="lss-input-item" :key="index">
-            <i-input v-model="itemTitle[index]['val']"></i-input>
+          <Form-item :label="item.name+'--'+index" v-for="(item,index) in itemTitle" class="lss-input-item" :key="index">
+            <i-input v-model="itemTitle[index]['val']" number></i-input>
           </Form-item>
         </i-form>
       </div>
       <div class="lss-submit-btn"><i-button type="primary" size="large">确认提交</i-button>&nbsp;&nbsp;<i-button @click="itemAddBtn = !itemAddBtn" type="primary" size="large">&nbsp;&nbsp;&nbsp;取消&nbsp;&nbsp;&nbsp;</i-button></div>
       <div class="add-result">
         <p v-for="(item,index,key) in itemGS" :class="'lss-bg-'+bgColor[key]" v-if="eval(item.js) ?  true : false">
-          <span class="add-result-title">{{ item.name }}</span><span class="add-result-val">{{eval(item.js)}}</span><span class="add-result-des">{{item.jisuan}}</span>
+          <span class="add-result-title">{{ item.name }}{{index}}</span><span class="add-result-val">{{eval(item.js)}}</span><span class="add-result-des">{{item.jisuan}}</span>
         </p>
       </div>
     </div>
@@ -38,7 +38,7 @@
     props: ["itemData","itemTitle","itemGS"],
     data (){
       return {
-        bgColor:["0c91e5","green","aa0d79","49b3be","ff78e2","eaa810","yellow","red","blue"],
+        bgColor:["0c91e5","green","aa0d79","49b3be","ff78e2","eaa810","696919","red","blue","palevioletred","purple","plum","saddlebrown","powderblue","seashell","navy","tan"],
         itemAddBtn:false,
 
       }
@@ -48,7 +48,15 @@
         if(isNaN(eval(d)) || eval(d) == Infinity || eval(d) == -Infinity){
           return "";
         }else{
-          return eval(d);
+          var lastNum = d.substr(-4);
+          var result = eval(d);
+          if(result != 0){
+              result = Number(result).toFixed(2);
+              if(lastNum == "*100"){
+                result = result+"%";
+              }
+          }
+          return result;
         }
       },
       addNewRecode:function () {
@@ -106,7 +114,16 @@
   .lss-bg-49b3be {background: #49b3be;}
   .lss-bg-ff78e2 {background: #ff78e2;}
   .lss-bg-eaa810 {background: #eaa810;}
-  .lss-bg-yellow {background: yellow;}
+  .lss-bg-696919 {background: #696919;}
   .lss-bg-red {background: red;}
   .lss-bg-blue {background: blue;}
+  .lss-bg-palevioletred {background: palevioletred;}
+  .lss-bg-purple {background: purple;}
+  .lss-bg-plum {background: plum;}
+  .lss-bg-saddlebrown {background: saddlebrown;}
+  .lss-bg-powderblue {background: powderblue;}
+  .lss-bg-seashell {background: seashell;}
+  .lss-bg-navy {background: navy;}
+  .lss-bg-tan {background: tan;}
+  
 </style>

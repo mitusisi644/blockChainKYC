@@ -85,7 +85,8 @@ lssPlugin.install = function (Vue, options) {
 		const https = require('https');
 		const options = {
 			path: urlPath,
-			method: 'DELETE'
+			method: 'GET',
+			Origin:"http://stock2.finance.sina.com.cn"
 		};
 		const req = https.request(options, (res) => {
 			callbackFun(res);

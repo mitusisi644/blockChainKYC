@@ -39,4 +39,7 @@ export default {
   .demoValue:hover {
     background:#0c91e5; color:#fff;
   }
+  .zhang-n { color: #19be6b !important; }
+  .die-n { color: #ed3f14 !important;}
+  .ping-n { color: #999 !important;}
 </style>
