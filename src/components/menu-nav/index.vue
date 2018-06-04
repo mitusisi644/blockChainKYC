@@ -1,5 +1,6 @@
 <template>
   <div class="right-menu">
+    <div class=""></div>
     <Menu :theme="theme" :active-name="activeIndex" width="200" @on-select="route">
       <MenuGroup title="统计分析">
         <MenuItem name="/">

@@ -142,17 +142,9 @@ ROO菜油
 TAO甲酸
 
 
-商品期货
-http://stock2.finance.sina.com.cn/f utures/a pi/j son.p h p/ln d exService.g etlnnerFutures
-MiniKLineXm?symboI=CODE
-例子
-http://stock2.finance.sina.com.cn/futures/api/json.php/IndexService.getInnerFuturesMiniKLine5m?symbol=M0
-5分钟：
-http://stock2.finance.sina.com.cn/futures/api/json.php/IndexService.getInnerFuturesMiniKLine5m?symbol=M0
-15分钟：
-http://stock2.finance.sina.com.cn/futures/api/json.php/IndexService.getInnerFuturesMiniKLine15m?symbol=M0
-30分钟：
-http://stock2.finance.sina.com.cn/futures/api/json.php/IndexService.getInnerFuturesMiniKLine30m?symbol=M0
-60分钟
-http://stock2.finance.sina.com.cn/futures/api/json.php/IndexService.getInnerFuturesMiniKLine60m?symbol=M0
+
+全日线 https://stock.sina.com.cn/futures/api/jsonp.php/var20_GC2018_5_29=/GlobalFuturesService.getGlobalFuturesDailyKLine?symbol=GC&_=2018_5_29
+时实线 http://hq.sinajs.cn/?_=1527583443029/&list=hf_AHD,hf_CAD,hf_S,hf_W,hf_C,hf_NG,hf_CL,hf_SI,hf_GC,hf_OIL,hf_XPD
+分钟线 http://stock2.finance.sina.com.cn/futures/api/json.php/IndexService.getInnerFuturesMiniKLine30m?symbol=M1805
+          
 ```
