@@ -15,6 +15,7 @@ export default {
   name: 'App',
   data () {
     return {
+      usRiyterAkuve:true
     };
   },
   created: function () {
@@ -29,7 +30,7 @@ export default {
     height: auto;
     overflow: hidden;
     position: relative;
-    padding:10px 10px 10px 210px;
+    padding:10px 10px 10px 410px;
   }
   .demoValue {
     width:50px; position: fixed;

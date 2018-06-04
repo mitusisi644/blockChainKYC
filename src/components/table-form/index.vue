@@ -18,15 +18,15 @@
       <div class="line-fg"></div>
       <div class="add-form">
         <i-form label-position="right" :label-width="100">
-          <Form-item :label="item.name+'--'+index" v-for="(item,index) in itemTitle" class="lss-input-item" :key="index">
+          <Form-item :label="item.name" v-for="(item,index) in itemTitle" class="lss-input-item" :key="index">
             <i-input v-model="itemTitle[index]['val']" number></i-input>
           </Form-item>
         </i-form>
       </div>
-      <div class="lss-submit-btn"><i-button type="primary" size="large">确认提交</i-button>&nbsp;&nbsp;<i-button @click="itemAddBtn = !itemAddBtn" type="primary" size="large">&nbsp;&nbsp;&nbsp;取消&nbsp;&nbsp;&nbsp;</i-button></div>
+      <div class="lss-submit-btn"><i-button type="primary" size="large" @click="submitResult()">确认提交</i-button>&nbsp;&nbsp;<i-button @click="itemAddBtn = !itemAddBtn" type="primary" size="large">&nbsp;&nbsp;&nbsp;取消&nbsp;&nbsp;&nbsp;</i-button></div>
       <div class="add-result">
         <p v-for="(item,index,key) in itemGS" :class="'lss-bg-'+bgColor[key]" v-if="eval(item.js) ?  true : false">
-          <span class="add-result-title">{{ item.name }}{{index}}</span><span class="add-result-val">{{eval(item.js)}}</span><span class="add-result-des">{{item.jisuan}}</span>
+          <span class="add-result-title">{{ item.name }}</span><span class="add-result-val">{{eval(item.js)}}</span><span class="add-result-des">{{item.jisuan}}</span>
         </p>
       </div>
     </div>
@@ -58,6 +58,18 @@
           }
           return result;
         }
+      },
+      submitResult:function() {
+        var subResu = [];
+        for(var item in this.itemGS){
+            subResu.push(this.eval(this.itemGS[item]['js']));
+        }
+
+        this.$axios(promiseBaseUrl, subResu, function(){
+          alert('success');
+        },function(){
+          alert('error');
+        })
       },
       addNewRecode:function () {
         this.itemAddBtn = !this.itemAddBtn;

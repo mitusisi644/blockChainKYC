@@ -25,7 +25,7 @@ module.exports = function (urlCode, formData, successFun, errorFun, method, isLo
       typeof successFun === 'function' ? successFun(data) : null
     },
     error(data){
-      errorFun(data)
+      typeof errorFun === 'function' ? errorFun(data) : null
     }
   })
 }
