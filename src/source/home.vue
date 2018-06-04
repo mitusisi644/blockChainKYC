@@ -107,6 +107,7 @@
   }
 </script>
 <style scoped>
+  .home {padding:0px 20px;}
   .lss-top-block {
     width: 100%;
     height: auto;
