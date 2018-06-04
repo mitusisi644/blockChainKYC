@@ -30,7 +30,7 @@ export default {
     height: auto;
     overflow: hidden;
     position: relative;
-    padding:10px 10px 10px 410px;
+    padding:10px 10px 10px 500px;
   }
   .demoValue {
     width:50px; position: fixed;

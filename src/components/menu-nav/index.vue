@@ -24,10 +24,30 @@
       <div class="hot-market">
         <p></p>
       </div>     
-      <Tabs type="card">
-          <Tab-pane label="transition">标签一的内容</Tab-pane>
-          <Tab-pane label="token">标签二的内容</Tab-pane>
+      <Tabs type="card" @on-click="changeTabs()">
+          <Tab-pane label="transition" class="transition-warp topnav_box">
+            <p class="transition-line" v-for="(item,index) in transitionData" :key="index"><span>{{timestampToTime(item.timestamp)}}</span> <span>{{item.hash}}</span></p>
+          </Tab-pane>
+          <Tab-pane label="token">
+            <p class="btn-span"><span class="ivu-btn-primary" @click="addTokenAsf = !addTokenAsf">+add</span></p>
+            <p class="transition-line" v-for="(item,index) in tokenData" :key="index"><span>{{item.address}}</span></p>
+          </Tab-pane>
       </Tabs>
+      <div class="add-token-dialog" v-if="addTokenAsf">
+        <p class="back-tabs">ADD TOKEN</p>
+        <Form ref="addToken" :model="addToken" :label-width="100">
+          <FormItem label="Token Contract Address">
+              <Input v-model="addToken.address" placeholder="Token Contract Address..."></Input>
+          </FormItem>
+          <FormItem label="Token Symbol">
+              <Input v-model="addToken.symbol"></Input>
+          </FormItem>
+          <FormItem label="Decimals of Precision">
+              <Input v-model="addToken.precision"></Input>
+          </FormItem>
+        </Form>
+        <p class="btn-span"><span class="ivu-btn-primary" @click="addTokenRecode()">&nbsp;&nbsp;提交&nbsp;&nbsp;</span></p>
+      </div>
     </div>
   </div>
 </template>
@@ -36,22 +56,57 @@
       name: "MenuNav",
       data(){
           return {
+            addTokenAsf:false,
+            addToken:{
+              "address":'0xa8e4c3d8def65ce7167ca6b1c6f1a4481df0b7cb',
+              "symbol":"TOKEN",
+              "precision":"18"
+            },
+            transitionData:[],
+            firstTransaction:[],
+            tokenData:[],
+            defaultCtru: '0xa8e4c3d8def65ce7167ca6b1c6f1a4481df0b7cb'
           }
       },
       methods: {
-        
+        timestampToTime: function (timestamp) {
+            var date = new Date(parseInt(timestamp/1000000));//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+            var Y = date.getFullYear() + '-';
+            var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+            var D = date.getDate() + ' ';
+            var h = date.getHours() + ':';
+            var m = date.getMinutes() + ':';
+            var s = date.getSeconds();
+            return Y+M+D+h+m+s;
+        },
+        addTokenRecode:function(){
+          this.tokenData.push(this.addToken);
+          this.addTokenAsf = !this.addTokenAsf;
+        },
+        changeTabs:function(v){
+          $(".btn-span").show();
+        }
       },
-      created: function () {
+      created: function () {var _this = this;
+          this.$http.get('../../../static/json/transaction.json').then(res => {
+            var newArr = [];
+            res.body.map((item,index)=>{
+              newArr = newArr.concat(item.result.data)
+            });
+            _this.transitionData = newArr;
+          });
+          this.$http.get('../../../static/json/firstTransaction.json').then(res => {
+            this.firstTransaction = res.body;
+          });
       }
     }
 </script>
-
 <style scoped>
   .right-menu {
-    width:400px;
+    width: 500px;
     height:100%;
     position: absolute;
-    z-index: 1; padding:50px 20px 0px;
+    z-index: 1; padding:50px 0px 0px 20px;
     left: 0px; top:0px;
     border:none;
   }
@@ -71,5 +126,32 @@
   .status-report-item .token-val { color: #363636; }
 
   .market-menus { margin-top:-10px; z-index: 1; padding-top:30px; border:1px solid #ccc; padding:30px 10px; border-radius:5px;}
-  .hot-market { }
+  .transition-warp {width: 100%; height: 500px; overflow-y: scroll;}
+  .transition-line { width: 100%; height: auto; height: auto; line-height: 22px; font-size:14px; padding:5px 0px; border-bottom:1px solid #ccc; }
+  .transition-line span:last-child { font-size:12px; }
+  .topnav_box::-webkit-scrollbar{  
+      width: 5px;  
+      height:10px; 
+     background-color:#b5b1b1;
+
+  }  
+  .topnav_box::-webkit-scrollbar-track  {  
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+      border-radius: 10px; 
+        background-color:black;    
+      
+  }
+  .topnav_box::-webkit-scrollbar-thumb{  
+      border-radius: 10px;  
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+     background-color:#b5b1b1;
+  } 
+  .add-token-dialog { width:100%; height:100%; overflow: hidden; background:#fff; position: absolute; left: 0px; top:0px; padding:10px 30px;}
+  .back-tabs {width: 100%; height: auto; font-size:16px; font-weight: bold; text-align: center; padding:20px 0px 10px;}
+  .btn-span {
+    text-align: right;
+  }
+  .btn-span span {
+    padding:5px 10px; border-radius: 2px; cursor: pointer;
+  }
 </style>
