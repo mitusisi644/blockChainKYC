@@ -3,10 +3,10 @@
     <HeaderNav></HeaderNav>
     <MenuNav></MenuNav>
     <div class="lss-warp">
-      <router-view/>
+      <router-view></router-view>
     </div>
     <FooterNav></FooterNav>
-    <a class="demoValue">SHOW</a>
+    
   </div>
 </template>
 
@@ -19,6 +19,8 @@ export default {
     };
   },
   created: function () {
+  },
+  methods:{
   }
 }
 </script>

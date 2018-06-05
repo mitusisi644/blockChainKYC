@@ -1,12 +1,17 @@
 <template>
   <div class="tab-con">
-    <MarketData></MarketData>
     <NavTag :title="'财务报表'"></NavTag>
+    <div class="switch-ctrl lss-warp-div">
+      <i-switch size="large" @on-change="changedSwitch" v-model="switchValue">
+          <span slot="open">全开</span>
+          <span slot="close">全关</span>
+      </i-switch>
+    </div>
     <Collapse v-model="value">
       <Panel v-for="(item,index) in tableData" :name="'1'+index" :key="index">
         {{ item.title }}
         <Row slot="content">
-          <tableForm :itemData="item.itemData" :itemTitle="item.itemTitle" :itemGS="item.itemGS"></tableForm>
+          <tableForm :financeId="index" :itemData="item.itemData" :itemTitle="item.itemTitle" :itemGS="item.itemGS"></tableForm>
         </Row>
       </Panel>
     </Collapse>
@@ -17,7 +22,8 @@
         name: "finance",
         data(){
             return {
-              value:"",
+              value:[10,11,12,13,14,15,16],
+              switchValue:true,
               tableData:[
                 {
                   title:"偿债能力分析",
@@ -62,6 +68,7 @@
                   },
                   itemData:[
                     {
+                      "tableDate":2012,
                       "j":1,
                       "k":63,
                       "l":321,
@@ -71,6 +78,7 @@
                       "p":323
                     },
                     {
+                      "tableDate":2012,
                       "j":61,
                       "k":263,
                       "l":721,
@@ -168,6 +176,7 @@
                   },
                   itemData:[
                     {
+                      "tableDate":2012,
                       "j":1,
                       "k":63,
                       "l":321,
@@ -175,6 +184,7 @@
                       "n":673
                     },
                     {
+                      "tableDate":2012,
                       "j":61,
                       "k":263,
                       "l":721,
@@ -309,6 +319,7 @@
                   },
                   itemData:[
                     {
+                      "tableDate":2012,
                       "a":1,
                       "b":63,
                       "c":321,
@@ -449,6 +460,7 @@
                   },
                   itemData:[
                     {
+                      "tableDate":2012,
                       "a":1,
                       "b":63,
                       "c":321,
@@ -549,11 +561,13 @@
                   },
                   itemData:[
                     {
+                      "tableDate":2012,
                       "a":1,
                       "b":63,
                       "c":321
                     },
                     {
+                      "tableDate":2012,
                       "a":61,
                       "b":263,
                       "c":721
@@ -648,6 +662,7 @@
                   },
                   itemData:[
                     {
+                      "tableDate":2012,
                       "a":1,
                       "b":63,
                       "c":321,
@@ -706,10 +721,18 @@
             }
         },
         methods:{
+            changedSwitch:function(){
+                if(this.switchValue){
+                  this.value = [10,11,12,13,14,15];
+                }else{
+                  this.value = [];
+                }
+            },
         }
     }
 </script>
 
 <style scoped>
+  .switch-ctrl {width: 100%; height: auto; overflow: hidden;text-align: right; padding:10px 0px;}
   .tab-con {width: 100%; height: auto; overflow: hidden; padding:20px;}
 </style>

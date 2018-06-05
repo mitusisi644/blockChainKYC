@@ -29,20 +29,20 @@
           <div class="chard" style="height:600px">
             <Charts :chart-title="defaultQihuoZS.title" :k-id="defaultQihuoZS.kId"></Charts>
           </div>
-          <h2 class="index-item-title">相关指数</h2>
+          <h2 class="index-item-title">{{defaultQihuoZS.title}}加权指数</h2>
           <i-col span="11" class="index-item">
             <div class="index-item-con">
               <p>
-                <span>布伦特原油</span>
+                <span>买入</span>
                 <span class="progress-tab"><a class="status-g">Green</a></span>
               </p>
               <p>
-                <span>上交所原油</span>
-                <span class="progress-tab"><a class="status-y">Orange</a></span>
+                <span>卖出</span>
+                <span class="progress-tab"><a class="status-r">red</a></span>
               </p>
               <p>
-                <span>深交所原油</span>
-                <span class="progress-tab"><a class="status-r">Light blue</a></span>
+                <span>卖出</span>
+                <span class="progress-tab"><a class="status-r">red</a></span>
               </p>
             </div>
           </i-col>
@@ -227,7 +227,7 @@
 </script>
 <style scoped>
   .lss-market-warp {
-    width:100%; height: auto; overflow: hidden; padding:10px 10px 20px 20px;
+    width:100%; height: auto; overflow: hidden; padding:20px 10px 20px 20px;
   }
   .lmw-item {
     display: inline-block; width: 320px; margin-right:10px; margin-bottom: 10px; height: auto; overflow: hidden; position: relative;

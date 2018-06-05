@@ -64,8 +64,7 @@
             },
             transitionData:[],
             firstTransaction:[],
-            tokenData:[],
-            defaultCtru: '0xa8e4c3d8def65ce7167ca6b1c6f1a4481df0b7cb'
+            tokenData:[]
           }
       },
       methods: {
@@ -85,23 +84,57 @@
         },
         changeTabs:function(v){
           $(".btn-span").show();
+        },
+        setIn:function(){
+          setInterval(() => {
+              if(localStorage.transitionData && localStorage.transitionData != 'false'){
+                var newJ = eval('(' + localStorage.transitionData + ')');
+                this.transitionData.unshift(newJ);
+                localStorage.transitionData = false;
+                setTimeout(function(){
+                  $(".transition-warp p").eq(0).css("background","#eff7ff");
+                },1000)
+                
+              }else{
+                setTimeout(function(){
+                  $(".transition-warp p").eq(0).css("background","none");
+                },1000)
+              }
+          }, 5000)
+
         }
       },
-      created: function () {var _this = this;
+      created: function () {
+          var _this = this;
+          localStorage.transitionData = false;     
           this.$http.get('../../../static/json/transaction.json').then(res => {
             var newArr = [];
             res.body.map((item,index)=>{
               newArr = newArr.concat(item.result.data)
             });
             _this.transitionData = newArr;
+            _this.setIn()
           });
           this.$http.get('../../../static/json/firstTransaction.json').then(res => {
             this.firstTransaction = res.body;
           });
+      },
+      watch:{
+        "transitionData":function(){
+
+        }
       }
     }
 </script>
 <style scoped>
+  .aniShan {
+    animation: shans 0s 0.5s infinite;
+    -webkit-animation: shans 0s 0.5s infinite;
+  }
+  @keyframes shans{
+    from{ background:rgba(203,100,0,0); }
+    to{ background:rgba(203,100,0,0.8); }
+  }
   .right-menu {
     width: 500px;
     height:100%;

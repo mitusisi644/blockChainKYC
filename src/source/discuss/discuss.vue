@@ -1,8 +1,7 @@
 <template>
   <div class="tab-con">
-    <MarketData></MarketData>
     <NavTag :title="'热门评论'"></NavTag>
-    <div class="hot-con">
+    <!-- <div class="hot-con">
         <p class="hot-item">
           <span class="title">股票</span>
           <span class="des">XXX股票独秀一枝，是发展还是套路...</span>
@@ -19,7 +18,7 @@
           <span class="title">政券</span>
           <span class="des">唯一不变的发展，就像喀纳斯的湖水怪</span>
         </p>
-    </div>
+    </div> -->
     <i-table class="lss-table-list" :content="self" :columns="tableColumns" :data="tableData"></i-table>
   </div>
 </template>
@@ -32,12 +31,20 @@
             self: this,
             tableData: [
               {
-                name: '交易达成率',
-                action:"1"
+                name: '企业素质',
+                action:5
               },
               {
-                name: '品质(Character)',
-                action:"3"
+                name: '资金信用',
+                action:5
+              },
+              {
+                name: '经营管理',
+                action:2
+              },
+              {
+                name: '经济效益',
+                action:0
               }
             ],
             tableColumns: [
@@ -48,18 +55,15 @@
               {
                 title: ' ',
                 key: ' ',
-                width: 100,
+                width: 200,
                 align: 'center',
                 render: function (h, params) {
-                  return h('div', [
-                    h('Button', {
-                      props: {
-                        type: 'primary',
-                        shape:"circle",
-                        size: 'small'
+                  return h('Rate',{
+                      props:{
+                        disabled:true,
+                        value:params.row.action
                       }
-                    }, params.row.action)
-                  ]);
+                  });
                 }
               }
             ]

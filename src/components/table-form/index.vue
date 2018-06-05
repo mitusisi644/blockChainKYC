@@ -6,6 +6,10 @@
       border
       style="width: 100%">
       <el-table-column
+        prop="tableDate"
+        label="日期">
+      </el-table-column>
+      <el-table-column
         :prop="index"
         :label="item.name"
         v-for="(item,index) in itemGS" :key="index">
@@ -23,6 +27,7 @@
           </Form-item>
         </i-form>
       </div>
+      <div class="lss-auto-complete" @click="SetAutoComplete()"></div>
       <div class="lss-submit-btn"><i-button type="primary" size="large" @click="submitResult()">确认提交</i-button>&nbsp;&nbsp;<i-button @click="itemAddBtn = !itemAddBtn" type="primary" size="large">&nbsp;&nbsp;&nbsp;取消&nbsp;&nbsp;&nbsp;</i-button></div>
       <div class="add-result">
         <p v-for="(item,index,key) in itemGS" :class="'lss-bg-'+bgColor[key]" v-if="eval(item.js) ?  true : false">
@@ -35,12 +40,12 @@
 
 <script>
   export default {
-    props: ["itemData","itemTitle","itemGS"],
+    props: ["financeId","itemData","itemTitle","itemGS"],
     data (){
       return {
         bgColor:["0c91e5","green","aa0d79","49b3be","ff78e2","eaa810","696919","red","blue","palevioletred","purple","plum","saddlebrown","powderblue","seashell","navy","tan"],
         itemAddBtn:false,
-
+        tableDate:"2012"
       }
     },
     methods:{
@@ -61,24 +66,48 @@
       },
       submitResult:function() {
         var subResu = [];
+        var financeAddData = {};
         for(var item in this.itemGS){
-            subResu.push(this.eval(this.itemGS[item]['js']));
+            var vals = this.eval(this.itemGS[item]['js']);
+            if(vals){            
+              subResu.push((vals)+"");
+              financeAddData[item] = vals;
+            }
+        }
+        if(subResu.length > 0 && financeAddData.length > 0){
+          //表格数据动态添加
+          financeAddData.tableDate = 2018;
+          this.itemData.push(financeAddData);
+          //左侧数据动态添加
+          localStorage.transitionData = '{"timestamp": Date.parse(new Date())+"000000", "hash": "0x91ab72c238f5c5ed7ca2a43be245e358ff2bc2168e92e9ce8d7fd4395c80f254","from": "0xed9d02e382b34818e88b88a309c7fe71e65f419d", "to": "0x29d368dcb94c5cc18800bde6473a2c6d23f3dc3f", "value": "1","v": "27"}';
+
+          //提交完成：
+          this.itemAddBtn = false;
+          for(var s in this.itemTitle){
+            this.itemTitle[s]['val'] = 0;
+          }
         }
 
-        this.$axios(promiseBaseUrl, subResu, function(){
+        /*this.$axios(promiseBaseUrl, JSON.stringify(subResu), function(){
           alert('success');
         },function(){
           alert('error');
-        })
+        },"post")*/
       },
       addNewRecode:function () {
         this.itemAddBtn = !this.itemAddBtn;
+      },
+      SetAutoComplete:function(){
+        for(var s in this.itemTitle){
+            this.itemTitle[s]['val'] = 2;
+          }
       }
     }
   }
 </script>
 
 <style scoped>
+.lss-auto-complete { width: 100px; height: 200px; background:none; position: absolute;right:0px; top:0px; }
   .line-fg {width: 100%; height: 2px;
     overflow: hidden;
     background:#0c91e5;
@@ -90,12 +119,12 @@
     text-align: right;
   }
   .lss-submit-btn,.add-form,.add-result,.add-new-recode-form {
-    width: 100%; height: auto;overflow: hidden;
+    width: 100%; height: auto; overflow: hidden; position: relative;
   }
   .lss-submit-btn { text-align: right;}
   .add-form { padding-top:20px;}
   .lss-input-item {
-    display:block;float: left; width: 300px;
+    display:block;float: left; width: 30%; height: 45px; margin-right:10px;
   }
   .add-result {
     padding:30px 20px 0px;
