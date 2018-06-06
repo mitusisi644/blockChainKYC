@@ -28,8 +28,11 @@
           <Tab-pane label="transition" class="transition-warp topnav_box">
             <p class="transition-line" v-for="(item,index) in transitionData" :key="index"><span>{{timestampToTime(item.timestamp)}}</span> <span>{{item.hash}}</span></p>
           </Tab-pane>
-          <Tab-pane label="token">
+          <Tab-pane label="Contract">
             <p class="btn-span"><span class="ivu-btn-primary" @click="addTokenAsf = !addTokenAsf">+add</span></p>
+            <p class="transition-line"><span>0xa8e4c3d8def65ce7167ca6b1c6f1a4481df0b7cb</span></p>
+            <p class="transition-line"><span>0xa1er23tge4c3d8def65635ce71g67ca6b1c6f1a9</span></p>
+            <p class="transition-line"><span>0xa23834e4c3d8def6gt5ce7167ca6b1c6f1a24481</span></p>
             <p class="transition-line" v-for="(item,index) in tokenData" :key="index"><span>{{item.address}}</span></p>
           </Tab-pane>
       </Tabs>
@@ -83,7 +86,7 @@
           this.addTokenAsf = !this.addTokenAsf;
         },
         changeTabs:function(v){
-          $(".btn-span").show();
+          $(".btn-span,.transition-line").show();
         },
         setIn:function(){
           setInterval(() => {

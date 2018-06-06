@@ -9,7 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 
-import 'configPath'
+//import 'configPath'
 import HeaderNav from './components/header-nav'
 import FooterNav from './components/footer-nav'
 import MenuNav from './components/menu-nav'

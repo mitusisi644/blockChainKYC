@@ -79,7 +79,14 @@
           financeAddData.tableDate = 2018;
           this.itemData.push(financeAddData);
           //左侧数据动态添加
-          localStorage.transitionData = '{"timestamp": Date.parse(new Date())+"000000", "hash": "0x91ab72c238f5c5ed7ca2a43be245e358ff2bc2168e92e9ce8d7fd4395c80f254","from": "0xed9d02e382b34818e88b88a309c7fe71e65f419d", "to": "0x29d368dcb94c5cc18800bde6473a2c6d23f3dc3f", "value": "1","v": "27"}';
+          var _hash = Math.random().toString(36).substr(2)+
+                      Math.random().toString(36).substr(2)+
+                      Math.random().toString(36).substr(2)+
+                      Math.random().toString(36).substr(2)+
+                      Math.random().toString(36).substr(2)+
+                      Math.random().toString(36).substr(2);
+          var _today =  Date.parse(new Date())+"000000";
+          localStorage.transitionData = '{"timestamp": "'+_today+'", "hash": "'+_hash+'","from": "0xed9d02e382b34818e88b88a309c7fe71e65f419d", "to": "0x29d368dcb94c5cc18800bde6473a2c6d23f3dc3f", "value": "1","v": "27"}';
 
           //提交完成：
           this.itemAddBtn = false;
@@ -102,6 +109,8 @@
             this.itemTitle[s]['val'] = 2;
           }
       }
+    },
+    created:function(){
     }
   }
 </script>
