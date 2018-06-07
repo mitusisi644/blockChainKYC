@@ -87,12 +87,12 @@
                       Math.random().toString(36).substr(2);
           var _today =  Date.parse(new Date())+"000000";
           localStorage.transitionData = '{"timestamp": "'+_today+'", "hash": "'+_hash+'","from": "0xed9d02e382b34818e88b88a309c7fe71e65f419d", "to": "0x29d368dcb94c5cc18800bde6473a2c6d23f3dc3f", "value": "1","v": "27"}';
+        }
 
-          //提交完成：
-          this.itemAddBtn = false;
-          for(var s in this.itemTitle){
-            this.itemTitle[s]['val'] = 0;
-          }
+        //提交完成：
+        this.itemAddBtn = false;
+        for(var s in this.itemTitle){
+          this.itemTitle[s]['val'] = 0;
         }
 
         /*this.$axios(promiseBaseUrl, JSON.stringify(subResu), function(){
@@ -106,7 +106,7 @@
       },
       SetAutoComplete:function(){
         for(var s in this.itemTitle){
-            this.itemTitle[s]['val'] = 2;
+            this.itemTitle[s]['val'] = this.itemTitle[s]['test'];
           }
       }
     },

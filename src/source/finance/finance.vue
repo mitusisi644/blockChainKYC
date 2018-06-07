@@ -31,21 +31,25 @@
                   itemTitle:{
                     "a":{
                       "name":"流动资产",
-                      "val":0
+                      "val":0,
+                      "test":416.54
                     },
                     "b":{
                       "name":"流动负债",
-                      "val":0
+                      "val":0,
+                      "test":867.34
                     },
                     "c":{
                       "name":"存货",
-                      "val":0
+                      "val":0,
+                      "test":217.12
                     },
                     "d":{
                       "name":"货币资金",
-                      "val":0
+                      "val":0,
+                      "test":83.73
                     },
-                    "e":{
+                   /* "e":{
                       "name":"短期投资",
                       "val":0
                     },
@@ -64,29 +68,39 @@
                     "i":{
                       "name":"平均应收账",
                       "val":0
-                    }
+                    }*/
                   },
                   itemData:[
                     {
-                      "tableDate":2012,
-                      "j":'208.82%',
-                      "k":'88.24%',
-                      "l":'--',
-                      "m":'6.07%',
-                      "n":'--',
-                      "o":'--',
-                      "p":'--'
+                      "tableDate":"中国石油",
+                      "j":'82.17%',
+                      "k":'55.70%',
+                      //"l":'--',
+                      "m":'23.51%',
+                      //"n":'--',
+                      //"o":'--',
+                      //"p":'--'
                     },
                     {
-                      "tableDate":2013,
+                      "tableDate":'乐视',
+                      "j":'52.75%',
+                      "k":'47.85%',
+                      //"l":'--',
+                      "m":'7.33%',
+                      //"n":'19.17%',
+                      //"o":'--',
+                      //"p":'--'
+                    },
+                    {
+                      "tableDate":"中国联通",
                       "j":'17.76%',
                       "k":'14.52%',
-                      "l":'--',
+                      //"l":'--',
                       "m":'7.33%',
-                      "n":'19.17%',
-                      "o":'--',
-                      "p":'--'
-                    }
+                      //"n":'19.17%',
+                      //"o":'--',
+                      //"p":'--'
+                    },
                   ],
                   itemGS:{
                     "j":{
@@ -99,17 +113,17 @@
                       "jisuan":"（流动资产－存货）／流动负债",
                       "js":"(this.itemTitle.a.val-this.itemTitle.c.val)/this.itemTitle.b.val"
                     },
-                    "l":{
+                    /*"l":{
                       "name":"保守速动比率（超速动比率）",
                       "jisuan":"货币资金+短期投资+应收票据+应收帐款）／流动负债",
                       "js":"(this.itemTitle.d.val+this.itemTitle.e.val+this.itemTitle.f.val+this.itemTitle.g.val)/this.itemTitle.b.val"
-                    },
+                    },*/
                     "m":{
                       "name":"现金比率",
                       "jisuan":"（货币资金／流动负债）",
                       "js":"this.itemTitle.d.val/this.itemTitle.b.val"
                     },
-                    "n":{
+                    /*"n":{
                       "name":"应收帐款周转率",
                       "jisuan":"销售收入／平均应收帐款",
                       "js":"this.itemTitle.h.val/this.itemTitle.i.val"
@@ -118,7 +132,7 @@
                       "name":"应收帐款周转天数",
                       "jisuan":"360天／(销售收入／平均应收帐款)",
                       "js":"360/(this.itemTitle.h.val/this.itemTitle.i.val)"
-                    },
+                    },*/
                   }
                 },
                 {
@@ -127,69 +141,89 @@
                   itemTitle:{
                     "a":{
                       "name":"股东权益总额",
-                      "val":0
+                      "val":0,
+                      "test":501.66
                     },
                     "b":{
                       "name":"资产总额",
-                      "val":0
+                      "val":0,
+                      "test":1465.11
                     },
                     "c":{
                       "name":"负债总额",
-                      "val":0
+                      "val":0,
+                      "test":963.45
                     },
-                    "d":{
+                    /*"d":{
                       "name":"负债合计",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "e":{
                       "name":"股东权益期末数",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "f":{
                       "name":"长期负债",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "g":{
                       "name":"短期借款",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "h":{
                       "name":"一年内到期的长期负债",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "i":{
                       "name":"长期借款",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "j":{
                       "name":"应付债券",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "k":{
                       "name":"长期应付款",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "l":{
                       "name":"股东权益期末数",
-                      "val":0
-                    }
+                      "val":0,
+                      "test":0
+                    }*/
                   },
                   itemData:[
                     {
-                      "tableDate":2012,
-                      "j":1,
-                      "k":'59.06%',
-                      "l":321,
-                      "m":23,
-                      "n":673
+                      "tableDate":"中国石油",
+                      "j":"57.91%",
+                      "k":'42.08%',
+                      //"l":"321",
+                      //"m":"23",
+                      //"n":"673"
                     },
                     {
-                      "tableDate":2013,
-                      "j":1,
+                      "tableDate":"乐视",
+                      "j":"-209773.04%",
+                      "k":'106.88%',
+                      //"l":321,
+                      //"m":23,
+                      //"n":673
+                    },
+                    { 
+                      "tableDate":"中国联通",
+                      "j":"aa%",
                       "k":'58.29%',
-                      "l":321,
-                      "m":23,
-                      "n":673
+                      //"l":"aa%",
+                      //"m":"aa%",
+                      //"n":"aa%"
                     }
                   ],
                   itemGS:{
@@ -203,7 +237,7 @@
                       "jisuan":"负债总额／资产总额×100%",
                       "js":'(this.itemTitle.c.val/this.itemTitle.b.val)*100'
                     },
-                    "l":{
+                    /*"l":{
                       "name":"资本负债比率",
                       "jisuan":"负债合计／股东权益期末数×100%",
                       "js":'(this.itemTitle.d.val/this.itemTitle.e.val)*100'
@@ -217,7 +251,7 @@
                       "name":"有息负债比率",
                       "jisuan":"（短期借款＋一年内到期的长期负债＋长期借款＋应付债券＋长期应付款）／股东权益期末数×100%",
                       "js":'((this.itemTitle.g.val+this.itemTitle.h.val+this.itemTitle.i.val+this.itemTitle.j.val+this.itemTitle.k.val)/this.itemTitle.l.val)*100'
-                    }
+                    }*/
                   }
                 },
                 {
@@ -226,125 +260,168 @@
                   itemTitle:{
                     "a":{
                       "name":"每股净资产",
-                      "val":0
+                      "val":0,
+                      "test":1.39
                     },
-                    "b":{
+                    /*"b":{
                       "name":"股东权益",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "c":{
                       "name":"３年以上的应收帐款",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "d":{
                       "name":"待摊费用",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "e":{
                       "name":"待处理财产净损失",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "f":{
                       "name":"递延资产",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "g":{
                       "name":" 普通股股数",
-                      "val":0
-                    },
+                      "val":0,
+                      "test":000
+                    },*/
                     "h":{
                       "name":"营业费用",
-                      "val":0
+                      "val":0,
+                      "test":106.08
                     },
                     "i":{
                       "name":"主营业务收入",
-                      "val":0
+                      "val":0,
+                      "test":129.87
                     },
                     "j":{
                       "name":"财务费用",
-                      "val":0
+                      "val":0,
+                      "test":6.9
                     },
-                    "k":{
+                    /*"k":{
                       "name":"上期三项费用合计",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "l":{
                       "name":"本期三项费用合计",
-                      "val":0
-                    },
+                      "val":0,
+                      "test":000
+                    },*/
                     "m":{
                       "name":"管理费用",
-                      "val":0
+                      "val":0,
+                      "test":3.66
                     },
-                    "n":{
+                    /*"n":{
                       "name":"销货成本",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "o":{
                       "name":"期初存货",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "p":{
                       "name":"期末存货",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "q":{
                       "name":"销售收入",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "r":{
                       "name":"平均固定资产",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "s":{
                       "name":"平均资产总额",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "t":{
                       "name":"本期主营业务收入",
-                      "val":0
+                      "val":0,
+                      "test":000
                     },
                     "u":{
                       "name":"上期主营业务收入",
-                      "val":0
-                    },
+                      "val":0,
+                      "test":000
+                    },*/
                     "v":{
                       "name":"其他应收帐款",
-                      "val":0
+                      "val":0,
+                      "test":33.33
                     },
                     "w":{
                       "name":"流动资产",
-                      "val":0
+                      "val":0,
+                      "test":416.54
+                    },
+                    "y":{
+                      "name":"调整后每股净资产",
+                      "val":0,
+                      "test":110
                     }
                   },
                   itemData:[
                     {
-                      "tableDate":2013,
-                      "a":1,
-                      "b":'1.38',
-                      "c":321,
-                      "d":23,
-                      "e":673,
-                      "f":843,
-                      "g":323,
+                      "tableDate":"中国石油",
+                      "a":"108.33%",
+                      //"b":'1.38',
+                      "c":"79.39%",
+                      "d":"1.11%",
+                      //"e":673,
+                      "f":4547.51,
+                      /*"g":323,
                       "h":323,
                       "i":323,
                       "j":'0.57%',
-                      "k":'5.94%',
-                      "l":323
+                      "k":'5.94%',*/
+                      "l":"16.20%"
+                    },
+                    {
+                      "tableDate":"乐视",
+                      "a":'17600%',
+                      //"b":'1.38',
+                      "c":"121.28%",
+                      "d":"39.35%",
+                      //"e":673,
+                      "f":8.12,
+                      /*"g":323,
+                      "h":323,
+                      "i":323,
+                      "j":'0.57%',
+                      "k":'5.94%',*/
+                      "l":"46.07%"
                     }
                   ],
                   itemGS:{
                     "a":{
                       "name":"净资产调整系数",
                       "jisuan":"（调整后每股净资产－每股净资产）/每股净资产",
-                      "js":'(((this.itemTitle.b.val-this.itemTitle.c.val-this.itemTitle.d.val-this.itemTitle.e.val-this.itemTitle.f.val)/this.itemTitle.g.val)-this.itemTitle.a.val)/this.itemTitle.a.val'
+                      "js":'(this.itemTitle.y.val-this.itemTitle.a.val)/this.itemTitle.a.val'
                     },
-                    "b":{
+                    /*"b":{
                       "name":"调整后每股净资产",
                       "jisuan":"（股东权益－３年以上的应收帐款－待摊费用－待处理财产净损失－递延资产）/ 普通股股数",
                       'js':"(this.itemTitle.b.val-this.itemTitle.c.val-this.itemTitle.d.val-this.itemTitle.e.val-this.itemTitle.f.val)/this.itemTitle.g.val"
-                    },
+                    },*/
                     "c":{
                       "name":"营业费用率",
                       "jisuan":"营业费用 / 主营业务收入×100%",
@@ -353,19 +430,19 @@
                     "d":{
                       "name":"财务费用率",
                       "jisuan":"财务费用 / 主营业务收入×100%",
-                      "js":'(this.itemTitle.f.val/this.itemTitle.i.val)*100'
+                      "js":'(this.itemTitle.j.val/this.itemTitle.i.val)*100'
                     },
-                    "e":{
+                    /*"e":{
                       "name":"三项费用增长率",
                       "jisuan":"（上期三项费用合计－本期三项费用合计）/ 本期三项费用合计",
                       "js":"(this.itemTitle.k.val-this.itemTitle.l.val)/this.itemTitle.l.val"
-                    },
+                    },*/
                     "f":{
                       "name":"三项费用合计",
                       "jisuan":"营业费用＋管理费用＋财务费用",
                       "js":"this.itemTitle.h.val+this.itemTitle.m.val+this.itemTitle.j.val"
                     },
-                    "g":{
+                    /*"g":{
                       "name":"存货周转率",
                       "jisuan":"销货成本×２／（期初存货＋期末存货）",
                       "js":"this.itemTitle.n.val*2/(this.itemTitle.o.val+this.itemTitle.p.val)"
@@ -389,7 +466,7 @@
                       "name":"主营业务收入增长率",
                       "jisuan":"（本期主营业务收入－上期主营业务收入）／上期主营业务收入×100%",
                       "js":'((this.itemTitle.t.val-this.itemTitle.u.val)/this.itemTitle.u.val)*100'
-                    },
+                    },*/
                     "l":{
                       "name":"其他应收帐款与流动资产比率",
                       "jisuan":"其他应收帐款／流动资产",
@@ -403,76 +480,118 @@
                   itemTitle:{
                     "a":{
                       "name":"营业成本",
-                      "val":0
+                      "val":0,
+                      "test":106.08
                     },
                     "b":{
                       "name":"主营业务收入",
-                      "val":0
+                      "val":0,
+                      "test":129.87
                     },
-                    "c":{
+                    /*"c":{
                       "name":"营业利润",
-                      "val":0
-                    },
+                      "val":0,
+                      "test":
+                    },*/
                     "d":{
                       "name":"利润总额",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "e":{
                       "name":"净利润",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
-                    "f":{
+                    /*"f":{
                       "name":"期初资产总额",
                       "val":0
                     },
                     "g":{
                       "name":" 期末资产总额",
                       "val":0
-                    },
+                    },*/
                     "h":{
                       "name":"净资产",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
-                    "i":{
+                    /*"i":{
                       "name":"剔除非经常性损益后的净利润",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "j":{
                       "name":"股东权益期末数",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "k":{
                       "name":"主营业务利润",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "l":{
                       "name":"固定资产净值",
-                      "val":0
+                      "val":0,
+                      "test":0
                     },
                     "m":{
                       "name":"总资产期末数",
-                      "val":0
-                    },
+                      "val":0,
+                      "test":0
+                    },*/
                     "n":{
                       "name":"主营业务成本",
-                      "val":0
+                      "val":0,
+                      "test":106.08
                     }
                   },
                   itemData:[
                     {
-                      "tableDate":2013,
-                      "a":1,
-                      "b":'4.76%',
-                      "c":321,
-                      "d":23,
-                      "e":673,
+                      "tableDate":"中国石油",
+                      "a":"79.39%",
+                      "b":'--',
+                      "c":'--',
+                      "d":"2.8%",
+                      "e":"673",
                       "f":'4.64%',
-                      "g":3823,
-                      "h":3623,
+                      "g":"3823",
+                      "h":"3623",
                       "i":'3.17%',
-                      "j":3423,
-                      "k":3923,
-                      "l":3
+                      "j":"3423",
+                      "k":"3923",
+                      "l":"3"
+                    },
+                    {
+                      "tableDate":"中国石油",
+                      "a":"79.39%",
+                      "b":'--',
+                      "c":'--',
+                      "d":"2.8%",
+                      "e":"673",
+                      "f":'4.64%',
+                      "g":"3823",
+                      "h":"3623",
+                      "i":'3.17%',
+                      "j":"3423",
+                      "k":"3923",
+                      "l":"3"
+                    },
+                    {
+                      "tableDate":"中国联通",
+                      "a":"--%",
+                      "b":'--%',
+                      "c":'--%',
+                      "d":"--%",
+                      "e":"--%",
+                      "f":'4.64%',
+                      "g":"--%",
+                      "h":"--%",
+                      "i":'--%',
+                      "j":"3.17%",
+                      "k":"--%",
+                      "l":"--%"
                     }
                   ],
                   itemGS:{
@@ -481,11 +600,11 @@
                       "jisuan":"营业成本/主营业务收入×100%",
                       "js":'(this.itemTitle.a.val/this.itemTitle.b.val)*100'
                     },
-                    "b":{
+                    /*"b":{
                       "name":"营业利润率",
                       "jisuan":"营业利润/主营业务收入×100%",
                       'js':'(this.itemTitle.c.val/this.itemTitle.b.val)*100'
-                    },
+                    },*/
                     "c":{
                       "name":"税前利润率",
                       "jisuan":"利润总额/主营业务收入×100%",
@@ -496,17 +615,17 @@
                       "jisuan":"净利润/主营业务收入×100%",
                       "js":'(this.itemTitle.e.val/this.itemTitle.b.val)*100'
                     },
-                    "e":{
+                    /*"e":{
                       "name":"资产收益率",
                       "jisuan":"净利润×2／（期初资产总额＋期末资产总额）×100%",
                       "js":'(this.itemTitle.e.val*2/(this.itemTitle.f.val+this.itemTitle.g.val))*100'
-                    },
+                    },*/
                     "f":{
                       "name":"净资产收益率",
                       "jisuan":" 净利润／净资产×100%",
                       "js":'(this.itemTitle.e.val/this.itemTitle.h.val)*100'
                     },
-                    "g":{
+                    /*"g":{
                       "name":"经常性净资产收益率",
                       "jisuan":"剔除非经常性损益后的净利润/股东权益期末数×100%",
                       "js":'(this.itemTitle.i.val/this.itemTitle.j.val)*100'
@@ -530,7 +649,7 @@
                       "name":"经常性总资产回报率",
                       "jisuan":"剔除非经常性损益后的净利润/总资产期末数×100%",
                       "js":'(this.itemTitle.i.val/this.itemTitle.m.val)*100'
-                    },
+                    },*/
                     "l":{
                       "name":"销售毛利率",
                       "jisuan":"（主营业务收入－主营业务成本）／主营业务收入×100%",
@@ -538,7 +657,7 @@
                     }
                   }
                 },
-                {
+                /*{
                   title:"投资收益分析",
                   loading:false,
                   itemTitle:{
@@ -716,7 +835,7 @@
                   itemTitle:{},
                   itemData:[],
                   itemGS:{}
-                },
+                },*/
               ]
             }
         },

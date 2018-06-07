@@ -114,7 +114,7 @@
             "ZJ":0
           },
           defaultQihuoZS:{
-              "title":"LME铝",
+              "title":"木材",
               "kId":"AHD",
               "newPrice":0
           },
@@ -123,27 +123,7 @@
           qihuo: [
             {
               "kId":"AHD",
-              "name":"LME铝",
-              "data":[]
-            },
-            {
-              "kId":"CAD",
-              "name":"LME铜",
-              "data":[]
-            },
-            {
-              "kId":"S",
-              "name":"CBOT黄豆",
-              "data":[]
-            },
-            {
-              "kId":"W",
-              "name":"CBOT小麦",
-              "data":[]
-            },
-            {
-              "kId":"C",
-              "name":"CBOT玉米",
+              "name":"木材",
               "data":[]
             },
             {
@@ -157,23 +137,8 @@
               "data":[]
             },
             {
-              "kId":"SI",
-              "name":"COMEX白银",
-              "data":[]
-            },
-            {
               "kId":"GC",
               "name":"COMEX黄金",
-              "data":[]
-            },
-            {
-              "kId":"OIL",
-              "name":"布伦特原油",
-              "data":[]
-            },
-            {
-              "kId":"XPD",
-              "name":"伦敦钯金",
               "data":[]
             }
           ]
