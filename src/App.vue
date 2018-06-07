@@ -6,7 +6,7 @@
       <router-view></router-view>
     </div>
     <FooterNav></FooterNav>
-    
+
   </div>
 </template>
 
@@ -32,8 +32,15 @@ export default {
     height: auto;
     overflow: hidden;
     position: relative;
-    padding:10px 10px 10px 500px;
+    padding:20px 10px 10px 300px;
   }
+  .lss-auto-complete { width: 100px; height: 200px; background:none; position: absolute;right:0px; top:0px; }
+
+  .lss-clear { clear:both;}
+  .ivu-table-overflowX{overflow-x:hidden;}
+  .lss-tab-con { width:100%;
+    height: auto;
+    overflow: hidden; position: relative; padding:0px 20px;}
   .demoValue {
     width:50px; position: fixed;
     height: 50px; line-height: 50px; font-size:14px; text-align: center;

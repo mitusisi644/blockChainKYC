@@ -139,7 +139,7 @@
     to{ background:rgba(203,100,0,0.8); }
   }
   .right-menu {
-    width: 500px;
+    width: 300px;
     height:100%;
     position: absolute;
     z-index: 1; padding:50px 0px 0px 20px;

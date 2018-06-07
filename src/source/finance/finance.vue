@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-con">
+  <div class="lss-tab-con">
     <NavTag :title="'财务报表'"></NavTag>
     <div class="switch-ctrl lss-warp-div">
       <i-switch size="large" @on-change="changedSwitch" v-model="switchValue">
@@ -90,7 +90,7 @@
                       //"n":'19.17%',
                       //"o":'--',
                       //"p":'--'
-                    },
+                    }/*,
                     {
                       "tableDate":"中国联通",
                       "j":'17.76%',
@@ -100,18 +100,18 @@
                       //"n":'19.17%',
                       //"o":'--',
                       //"p":'--'
-                    },
+                    },*/
                   ],
                   itemGS:{
                     "j":{
                       "name":"流动比率",
                       "jisuan":"流动资产／流动负债",
-                      "js":'this.itemTitle.a.val/this.itemTitle.b.val'
+                      "js":'(this.itemTitle.a.val/this.itemTitle.b.val)*100'
                     },
                     "k":{
                       "name":"速动比率",
                       "jisuan":"（流动资产－存货）／流动负债",
-                      "js":"(this.itemTitle.a.val-this.itemTitle.c.val)/this.itemTitle.b.val"
+                      "js":"((this.itemTitle.a.val-this.itemTitle.c.val)/this.itemTitle.b.val)*100"
                     },
                     /*"l":{
                       "name":"保守速动比率（超速动比率）",
@@ -121,7 +121,7 @@
                     "m":{
                       "name":"现金比率",
                       "jisuan":"（货币资金／流动负债）",
-                      "js":"this.itemTitle.d.val/this.itemTitle.b.val"
+                      "js":"(this.itemTitle.d.val/this.itemTitle.b.val)*100"
                     },
                     /*"n":{
                       "name":"应收帐款周转率",
@@ -216,21 +216,21 @@
                       //"l":321,
                       //"m":23,
                       //"n":673
-                    },
-                    { 
+                    }/*,
+                    {
                       "tableDate":"中国联通",
                       "j":"aa%",
                       "k":'58.29%',
                       //"l":"aa%",
                       //"m":"aa%",
                       //"n":"aa%"
-                    }
+                    }*/
                   ],
                   itemGS:{
                     "j":{
                       "name":"股东权益比率",
                       "jisuan":"股东权益总额／资产总额×100%",
-                      "js":'(this.itemTitle.a.val/this.itemTitle.b.val*100)+"%"'
+                      "js":'(this.itemTitle.a.val/this.itemTitle.b.val)*100'
                     },
                     "k":{
                       "name":"资产负债比率",
@@ -415,7 +415,7 @@
                     "a":{
                       "name":"净资产调整系数",
                       "jisuan":"（调整后每股净资产－每股净资产）/每股净资产",
-                      "js":'(this.itemTitle.y.val-this.itemTitle.a.val)/this.itemTitle.a.val'
+                      "js":'((this.itemTitle.y.val-this.itemTitle.a.val)/this.itemTitle.a.val)*100'
                     },
                     /*"b":{
                       "name":"调整后每股净资产",
@@ -470,11 +470,11 @@
                     "l":{
                       "name":"其他应收帐款与流动资产比率",
                       "jisuan":"其他应收帐款／流动资产",
-                      "js":"this.itemTitle.v.val/this.itemTitle.w.val"
+                      "js":"(this.itemTitle.v.val/this.itemTitle.w.val)*100"
                     }
                   }
                 },
-                {
+                /*{
                   title:"盈利能力分析",
                   loading:false,
                   itemTitle:{
@@ -488,11 +488,7 @@
                       "val":0,
                       "test":129.87
                     },
-                    /*"c":{
-                      "name":"营业利润",
-                      "val":0,
-                      "test":
-                    },*/
+
                     "d":{
                       "name":"利润总额",
                       "val":0,
@@ -503,44 +499,13 @@
                       "val":0,
                       "test":0
                     },
-                    /*"f":{
-                      "name":"期初资产总额",
-                      "val":0
-                    },
-                    "g":{
-                      "name":" 期末资产总额",
-                      "val":0
-                    },*/
+
                     "h":{
                       "name":"净资产",
                       "val":0,
                       "test":0
                     },
-                    /*"i":{
-                      "name":"剔除非经常性损益后的净利润",
-                      "val":0,
-                      "test":0
-                    },
-                    "j":{
-                      "name":"股东权益期末数",
-                      "val":0,
-                      "test":0
-                    },
-                    "k":{
-                      "name":"主营业务利润",
-                      "val":0,
-                      "test":0
-                    },
-                    "l":{
-                      "name":"固定资产净值",
-                      "val":0,
-                      "test":0
-                    },
-                    "m":{
-                      "name":"总资产期末数",
-                      "val":0,
-                      "test":0
-                    },*/
+
                     "n":{
                       "name":"主营业务成本",
                       "val":0,
@@ -600,11 +565,7 @@
                       "jisuan":"营业成本/主营业务收入×100%",
                       "js":'(this.itemTitle.a.val/this.itemTitle.b.val)*100'
                     },
-                    /*"b":{
-                      "name":"营业利润率",
-                      "jisuan":"营业利润/主营业务收入×100%",
-                      'js':'(this.itemTitle.c.val/this.itemTitle.b.val)*100'
-                    },*/
+
                     "c":{
                       "name":"税前利润率",
                       "jisuan":"利润总额/主营业务收入×100%",
@@ -615,41 +576,13 @@
                       "jisuan":"净利润/主营业务收入×100%",
                       "js":'(this.itemTitle.e.val/this.itemTitle.b.val)*100'
                     },
-                    /*"e":{
-                      "name":"资产收益率",
-                      "jisuan":"净利润×2／（期初资产总额＋期末资产总额）×100%",
-                      "js":'(this.itemTitle.e.val*2/(this.itemTitle.f.val+this.itemTitle.g.val))*100'
-                    },*/
+
                     "f":{
                       "name":"净资产收益率",
                       "jisuan":" 净利润／净资产×100%",
                       "js":'(this.itemTitle.e.val/this.itemTitle.h.val)*100'
                     },
-                    /*"g":{
-                      "name":"经常性净资产收益率",
-                      "jisuan":"剔除非经常性损益后的净利润/股东权益期末数×100%",
-                      "js":'(this.itemTitle.i.val/this.itemTitle.j.val)*100'
-                    },
-                    "h":{
-                      "name":"主营业务利润率",
-                      "jisuan":"主营业务利润／主营业务收入×100%",
-                      "js":'(this.itemTitle.k.val/this.itemTitle.b.val)*100'
-                    },
-                    "i":{
-                      "name":"固定资产回报率",
-                      "jisuan":"营业利润/固定资产净值×100%",
-                      "js":'(this.itemTitle.c.val/this.itemTitle.l.val)*100'
-                    },
-                    "j":{
-                      "name":"总资产回报率",
-                      "jisuan":"净利润/总资产期末数×100%",
-                      "js":'(this.itemTitle.e.val/this.itemTitle.m.val)*100'
-                    },
-                    "k":{
-                      "name":"经常性总资产回报率",
-                      "jisuan":"剔除非经常性损益后的净利润/总资产期末数×100%",
-                      "js":'(this.itemTitle.i.val/this.itemTitle.m.val)*100'
-                    },*/
+
                     "l":{
                       "name":"销售毛利率",
                       "jisuan":"（主营业务收入－主营业务成本）／主营业务收入×100%",
@@ -657,7 +590,7 @@
                     }
                   }
                 },
-                /*{
+                {
                   title:"投资收益分析",
                   loading:false,
                   itemTitle:{
@@ -853,5 +786,4 @@
 
 <style scoped>
   .switch-ctrl {width: 100%; height: auto; overflow: hidden;text-align: right; padding:10px 0px;}
-  .tab-con {width: 100%; height: auto; overflow: hidden; padding:20px;}
 </style>

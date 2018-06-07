@@ -69,7 +69,7 @@
         var financeAddData = {};
         for(var item in this.itemGS){
             var vals = this.eval(this.itemGS[item]['js']);
-            if(vals){            
+            if(vals){
               subResu.push((vals)+"");
               financeAddData[item] = vals;
             }
@@ -116,7 +116,6 @@
 </script>
 
 <style scoped>
-.lss-auto-complete { width: 100px; height: 200px; background:none; position: absolute;right:0px; top:0px; }
   .line-fg {width: 100%; height: 2px;
     overflow: hidden;
     background:#0c91e5;
@@ -175,5 +174,5 @@
   .lss-bg-seashell {background: seashell;}
   .lss-bg-navy {background: navy;}
   .lss-bg-tan {background: tan;}
-  
+
 </style>

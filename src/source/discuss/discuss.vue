@@ -1,25 +1,63 @@
 <template>
-  <div class="tab-con">
-    <NavTag :title="'热门评论'"></NavTag>
-    <!-- <div class="hot-con">
-        <p class="hot-item">
-          <span class="title">股票</span>
-          <span class="des">XXX股票独秀一枝，是发展还是套路...</span>
-        </p>
-        <p class="hot-item">
-          <span class="title">期货</span>
-          <span class="des">农业发展、工业出产————哪种才是正途，该怎么走？</span>
-        </p>
-        <p class="hot-item">
-          <span class="title">杠杆</span>
-          <span class="des">爆发就在一瞬间，胆量练就未来，你的心脏还好吗？</span>
-        </p>
-        <p class="hot-item">
-          <span class="title">政券</span>
-          <span class="des">唯一不变的发展，就像喀纳斯的湖水怪</span>
-        </p>
-    </div> -->
-    <i-table class="lss-table-list" :content="self" :columns="tableColumns" :data="tableData"></i-table>
+  <div class="lss-tab-con">
+    <NavTag :title="'交易对手评测指数'"></NavTag>
+    <div class="hot-con">
+        <i-form :label-width="100">
+          <Row>
+            <i-col span="20" order="0" class="lss-pingce-form">
+              <Form-item label="评测人">
+                <Input v-model="pingceValidate.fromUser" placeholder="Enter something..."></Input>
+              </Form-item>
+              <Form-item label="联系方式">
+                <Input v-model="pingceValidate.contact" placeholder="Enter something..."></Input>
+              </Form-item>
+            </i-col>
+            <i-col span="20">
+              <Form-item label="内容">
+                <Input type="textarea" v-model="pingceValidate.text" :rows="4" placeholder="Enter something..."></Input>
+              </Form-item>
+            </i-col>
+
+            <i-col span="24" class="form-con-title">企业指数评级</i-col>
+            <i-col span="11" class="lss-rate">
+              <span>企业素质</span>
+              <Rate allow-half v-model="pingceValidate.z">
+                <span style="color: #f5a623">{{ valueCustomText }}</span>
+              </Rate>
+            </i-col>
+            <i-col span="11" order="2" class="lss-rate">
+              <span>资金信用</span>
+              <Rate allow-half v-model="pingceValidate.y">
+                <span style="color: #f5a623">{{ valueCustomText }}</span>
+              </Rate>
+            </i-col>
+            <div class="lss-clear"></div>
+            <i-col span="11" class="lss-rate">
+              <span>经营管理</span>
+              <Rate allow-half v-model="pingceValidate.g">
+                <span style="color: #f5a623">{{ valueCustomText }}</span>
+              </Rate>
+            </i-col>
+            <i-col span="11" order="2" class="lss-rate">
+              <span>经济效益</span>
+              <Rate allow-half v-model="pingceValidate.x">
+                <span style="color: #f5a623">{{ valueCustomText }}</span>
+              </Rate>
+            </i-col>
+          </Row>
+          <div class="sub-btn">
+            <Form-item>
+              <i-button type="primary" size="large"
+                        :disabled="pingceValidate.x && pingceValidate.y && pingceValidate.g && pingceValidate.x ? false : true"
+                        @click="subFormData()">
+                保存</i-button>&nbsp;&nbsp;
+              <i-button type="ghost" size="large" @click="resetForm()">重置</i-button>
+            </Form-item>
+          </div>
+          <div class="lss-auto-complete" @click="autoForm()"></div>
+        </i-form>
+   </div>
+    <i-table class="lss-table-list" size="large" :columns="tableColumns" :data="tableData"></i-table>
   </div>
 </template>
 
@@ -28,6 +66,16 @@
         name: "discuss",
         data () {
           return {
+            pingceValidate:{
+                "fromUser":"",
+                "contact":"",
+                "text":"",
+                "z":0,
+                "y":0,
+                "g":0,
+                "x":0
+            },
+            valueCustomText:3,
             self: this,
             tableData: [
               {
@@ -49,13 +97,14 @@
             ],
             tableColumns: [
               {
-                title: '交易对手评价指数',
+                title: '企业评测综合结果',
                 key: 'name'
+                //width:"80%"
               },
               {
-                title: ' ',
-                key: ' ',
-                width: 200,
+                title: '评分',
+                key: 'action',
+                //width: "20%",
                 align: 'center',
                 render: function (h, params) {
                   return h('Rate',{
@@ -71,18 +120,54 @@
         },
         created:function(){
 
+        },
+        methods:{
+          autoForm:function(){
+            this.pingceValidate = {
+                "fromUser":"绥绣",
+                "contact":"13001002310",
+                "text":"合作参考",
+                "z":5,
+                "y":4.3,
+                "g":5,
+                "x":4.8
+            }
+          },
+          subFormData:function(){
+            var _hash = Math.random().toString(36).substr(2)+
+              Math.random().toString(36).substr(2)+
+              Math.random().toString(36).substr(2)+
+              Math.random().toString(36).substr(2)+
+              Math.random().toString(36).substr(2)+
+              Math.random().toString(36).substr(2);
+            var _today =  Date.parse(new Date())+"000000";
+            localStorage.transitionData = '{"timestamp":"'+_today+'", "hash": "0x'+_hash+'","from": "0xed9d02e382b34818e88b88a309c7fe71e65f419d", "to": "0x29d368dcb94c5cc18800bde6473a2c6d23f3dc3f", "value": "1","v": "27"}';
+            this.resetForm();
+          },
+          resetForm:function(){
+            this.pingceValidate = {
+              "fromUser":"",
+              "contact":"",
+              "text":"",
+              "z":0,
+              "y":0,
+              "g":0,
+              "x":0
+            }
+          }
         }
     }
 </script>
 
 <style scoped>
-  .tab-con,.hot-con {width: 100%;height: auto;overflow:hidden; position: relative; padding:20px;}
-  .hot-con { background:#f3f6ff;}
-  .hot-item { padding:15px 25px; width:auto; display: inline-block; height: auto; overflow: hidden; float: left; border-top:1px solid #ccc; border-bottom:1px solid #ccc; border-left:1px solid #ccc;}
-  .hot-item:first-child {border-left:none;}
-  .hot-item .title { font-style: 16px; display: inline-block; width: auto; overflow: hidden; height: 22px; line-height: 22px; padding: 0px 5px; border:1px solid #2d8cf0; color:#2d8cf0; border-radius: 3px;}
-  .hot-item .des {
-    display: block; width: 100%; height: auto; overflow: hidden; font-size:14px; color: #363636; line-height: 32px;
+  .hot-con {width: 100%;height: auto;overflow:hidden; position: relative; padding:20px; background:#f3f6ff;}
+  .lss-rate { height:35px;}
+  .lss-rate span{
+    display: inline-block; width: 100px; line-height:35px;
+    float: left; margin-right:8px;
+    height: auto;overflow: hidden;text-align:right;
   }
+  .form-con-title { text-align: center; font-size:16px; font-weight:bold; padding:5px 0px; margin-bottom:10px; background:#fff;}
   .lss-table-list { margin-top:20px; }
+  .sub-btn { clear:both; width:100%; height:auto; overflow: hidden; text-align: right; border-top:1px solid #ccc; margin-top:30px; padding:10px 0px;}
 </style>

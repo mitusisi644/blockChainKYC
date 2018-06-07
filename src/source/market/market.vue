@@ -1,7 +1,8 @@
 <template>
-    <div class="tab-con">
+    <div class="lss-tab-con">
       <div class="lss-market-warp">
         <NavTag :title="'行业状况'"></NavTag>
+        <div class="lss-clear"></div>
         <div :class="item.data[1]>0 ? 'lmw-item zhang-item' : 'lmw-item die-item'" v-for="(item,index) in qihuo" @click="showCharts(index)">
           <p class="lmw-title">
             <span>{{item.name}}【{{item.kId}}】</span>
@@ -133,12 +134,12 @@
             },
             {
               "kId":"CL",
-              "name":"NYMEX原油",
+              "name":"原油",
               "data":[]
             },
             {
               "kId":"GC",
-              "name":"COMEX黄金",
+              "name":"黄金",
               "data":[]
             }
           ]
@@ -187,11 +188,14 @@
     }
 </script>
 <style scoped>
+  .lss-clear {
+    clear: both;}
   .lss-market-warp {
-    width:100%; height: auto; overflow: hidden; padding:20px 10px 20px 20px;
+    width:100%; height: auto; overflow: hidden;
   }
   .lmw-item {
-    display: inline-block; width: 320px; margin-right:10px; margin-bottom: 10px; height: auto; overflow: hidden; position: relative;
+    display: inline-block; width: 24%; margin-right:0.5%;margin-left:0.5%; margin-bottom: 8px; height: auto; overflow: hidden;
+    position: relative; float:left;
     border:1px solid #ccc; padding:10px; border-bottom-width: 6px; border-radius: 4px; cursor:pointer;
   }
   .zhang-item{ border-color:#19be6b; }
@@ -229,9 +233,6 @@
     width:1px; height:100%; position: absolute; left: 50%; top:0px; background: #ccc;
   }
   .lmw-item .lmw-data a {float: right; color:green}
-  .industry-item{
-    padding:20px;
-  }
   .industry-item h2 {
     text-align: left;
     font-size:24px;
@@ -281,7 +282,7 @@
   .index-table {
     width:100%;
     height: auto;
-    overflow: hidden; padding:0px 20px;
+    overflow: hidden;
   }
   .index-table-title {width:100%; height:60px; padding:9px 15px; background:#0c91e5; color:#fff; border-top-left-radius:5px; border-top-right-radius:5px;}
   .index-table>.ivu-row {
