@@ -14,7 +14,7 @@
         <p class="token-val">0x76FE7655BACD</p>
       </router-link>
       <router-link class="status-report-item" to="/discuss">
-        <p class="title">互评</p>
+        <p class="title">市场增信</p>
         <p class="risk">风险度:<Tag color="green" size="small">Low</Tag></p>
         <p class="token-title">Last token:</p>
         <p class="token-val">0x76FE7655BACD</p>
@@ -23,7 +23,7 @@
     <div class="market-menus">
       <div class="hot-market">
         <p></p>
-      </div>     
+      </div>
       <Tabs type="card" @on-click="changeTabs()">
           <Tab-pane label="transition" class="transition-warp topnav_box">
             <p class="transition-line" v-for="(item,index) in transitionData" :key="index"><span>{{timestampToTime(item.timestamp)}}</span> <span>{{item.hash}}</span></p>
@@ -97,7 +97,7 @@
                 setTimeout(function(){
                   $(".transition-warp p").eq(0).css("background","#eff7ff");
                 },1000)
-                
+
               }else{
                 setTimeout(function(){
                   $(".transition-warp p").eq(0).css("background","none");
@@ -109,7 +109,7 @@
       },
       created: function () {
           var _this = this;
-          localStorage.transitionData = false;     
+          localStorage.transitionData = false;
           this.$http.get('../../../static/json/transaction.json').then(res => {
             var newArr = [];
             res.body.map((item,index)=>{
@@ -165,23 +165,23 @@
   .transition-warp {width: 100%; height: 500px; overflow-y: scroll;}
   .transition-line { width: 100%; height: auto; height: auto; line-height: 22px; font-size:14px; padding:5px 0px; border-bottom:1px solid #ccc; }
   .transition-line span:last-child { font-size:12px; }
-  .topnav_box::-webkit-scrollbar{  
-      width: 5px;  
-      height:10px; 
+  .topnav_box::-webkit-scrollbar{
+      width: 5px;
+      height:10px;
      background-color:#b5b1b1;
 
-  }  
-  .topnav_box::-webkit-scrollbar-track  {  
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
-      border-radius: 10px; 
-        background-color:black;    
-      
   }
-  .topnav_box::-webkit-scrollbar-thumb{  
-      border-radius: 10px;  
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+  .topnav_box::-webkit-scrollbar-track  {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius: 10px;
+        background-color:black;
+
+  }
+  .topnav_box::-webkit-scrollbar-thumb{
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
      background-color:#b5b1b1;
-  } 
+  }
   .add-token-dialog { width:100%; height:100%; overflow: hidden; background:#fff; position: absolute; left: 0px; top:0px; padding:10px 30px;}
   .back-tabs {width: 100%; height: auto; font-size:16px; font-weight: bold; text-align: center; padding:20px 0px 10px;}
   .btn-span {
