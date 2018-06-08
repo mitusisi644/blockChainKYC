@@ -2,21 +2,21 @@
   <div class="home">
     <div class="lss-top-block">
       <a class="lss-block-item">
-        <span class="lbi-img"><img src="../../src/assets/images/64X64.png" /></span>
+        <span class="lbi-img"><img src="../../src/assets/images/Token.png" /></span>
         <p class="lbi-con">
           <span class="lbi-title">Token 追踪</span>
           <span class="lbi-des">追踪Token变化</span>
         </p>
       </a>
       <a class="lss-block-item">
-        <span class="lbi-img"><img src="../../src/assets/images/64X64.png" /></span>
+        <span class="lbi-img"><img src="../../src/assets/images/Weight-management.png" /></span>
         <p class="lbi-con">
           <span class="lbi-title">权重管理</span>
           <span class="lbi-des">管理权重配比</span>
         </p>
       </a>
       <a class="lss-block-item">
-        <span class="lbi-img"><img src="../../src/assets/images/64X64.png" /></span>
+        <span class="lbi-img"><img src="../../src/assets/images/Market-transactions.png" /></span>
         <p class="lbi-con">
           <span class="lbi-title">市场交易</span>
           <span class="lbi-des">发起交易</span>
@@ -43,7 +43,7 @@
         </p>
         <p>
           <span>所占权重</span>
-          <span class="lmi-num">30%</span>
+          <span class="lmi-num">30.2%</span>
         </p>
         <router-link to="/finance" class="lmi-links">
           <Icon type="chevron-right"></Icon>
@@ -65,7 +65,7 @@
         </p>
         <p>
           <span>所占权重</span>
-          <span class="lmi-num">30%</span>
+          <span class="lmi-num">32.8%</span>
         </p>
         <router-link to="/market" class="lmi-links">
           <Icon type="chevron-right"></Icon>
