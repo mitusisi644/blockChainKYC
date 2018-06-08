@@ -24,18 +24,19 @@
       <div class="hot-market">
         <p></p>
       </div>
-      <Tabs type="card" @on-click="changeTabs()">
-          <Tab-pane label="transition" class="transition-warp topnav_box">
-            <p class="transition-line" v-for="(item,index) in transitionData" :key="index"><span>{{timestampToTime(item.timestamp)}}</span> <span>{{item.hash}}</span></p>
-          </Tab-pane>
-          <Tab-pane label="Contract">
-            <p class="btn-span"><span class="ivu-btn-primary" @click="addTokenAsf = !addTokenAsf">+add</span></p>
-            <p class="transition-line"><span>0xa8e4c3d8def65ce7167ca6b1c6f1a4481df0b7cb</span></p>
-            <p class="transition-line"><span>0xa1er23tge4c3d8def65635ce71g67ca6b1c6f1a9</span></p>
-            <p class="transition-line"><span>0xa23834e4c3d8def6gt5ce7167ca6b1c6f1a24481</span></p>
-            <p class="transition-line" v-for="(item,index) in tokenData" :key="index"><span>{{item.address}}</span></p>
-          </Tab-pane>
-      </Tabs>
+      <el-tabs value="first">
+        <el-tab-pane label="Transaction" name="first" class="transition-warp topnav_box">
+          <p class="transition-line" v-for="(item,index) in transitionData" :key="index"><span>{{timestampToTime(item.timestamp)}}</span> <span>{{item.hash}}</span></p>
+        </el-tab-pane>
+        <el-tab-pane label="Contract" name="second" class="transition-warp topnav_box">
+          <p class="btn-span"><span class="ivu-btn-primary" @click="addTokenAsf = !addTokenAsf">+add</span></p>
+          <p class="transition-line"><span>0xa8e4c3d8def65ce7167ca6b1c6f1a4481df0b7cb</span></p>
+          <p class="transition-line"><span>0xa1er23tge4c3d8def65635ce71g67ca6b1c6f1a9</span></p>
+          <p class="transition-line"><span>0xa23834e4c3d8def6gt5ce7167ca6b1c6f1a24481</span></p>
+          <p class="transition-line" v-for="(item,index) in tokenData" :key="index"><span>{{item.address}}</span></p>
+          <div class="open-ex-links"><a :href="'http://139.162.41.23:8765/'">风险评估分析表报告</a></div>
+        </el-tab-pane>
+      </el-tabs>
       <div class="add-token-dialog" v-if="addTokenAsf">
         <p class="back-tabs">ADD TOKEN</p>
         <Form ref="addToken" :model="addToken" :label-width="100">
@@ -153,6 +154,8 @@
     box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
     border-radius:5px; z-index: 5;
   }
+  .open-ex-links { width:100%; height:auto; overflow: hidden; text-align: center; font-weight:bold; font-size:14px; margin: 0 auto; padding:10px; color:#363636;}
+  .open-ex-links a:hover {color:#363636; text-decoration: underline}
   .status-report-item { display: block; border-bottom:1px solid #ccc; padding:15px 20px; color: #999; font-size:14px;}
   .router-link-active { background: #eff7ff; }
   .status-report-item:last-child { border-bottom:none; }
@@ -172,17 +175,15 @@
 
   }
   .topnav_box::-webkit-scrollbar-track  {
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
       border-radius: 10px;
-        background-color:black;
+        background-color:#efefef;
 
   }
   .topnav_box::-webkit-scrollbar-thumb{
       border-radius: 10px;
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-     background-color:#b5b1b1;
+     background-color:#2d8cf0;
   }
-  .add-token-dialog { width:100%; height:100%; overflow: hidden; background:#fff; position: absolute; left: 0px; top:0px; padding:10px 30px;}
+  .add-token-dialog { width:100%; height:100%; overflow: hidden; background:#fff; position: absolute; z-index: 5; left: 0px; top:0px; padding:10px 30px;}
   .back-tabs {width: 100%; height: auto; font-size:16px; font-weight: bold; text-align: center; padding:20px 0px 10px;}
   .btn-span {
     text-align: right;

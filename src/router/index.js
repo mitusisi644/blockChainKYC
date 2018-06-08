@@ -5,7 +5,6 @@ import Market from '@/source/market/market.vue'
 import Finance from '@/source/finance/finance.vue'
 //import FinanceForm from '@/source/finance/financeForm.vue'
 import Discuss from '@/source/discuss/discuss.vue'
-//import Demo from '@/source/finance/demo.vue'
 
 Vue.use(Router)
 
@@ -30,11 +29,6 @@ export default new Router({
       path: '/financeForm',
       name: 'financeForm',
       component: FinanceForm
-    },
-    {
-      path: '/demo',
-      name: 'demo',
-      component: Demo
     },*/
     {
       path: '/discuss',

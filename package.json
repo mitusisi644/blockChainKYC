@@ -19,8 +19,10 @@
     "ob.js": "^1.0.0",
     "vue": "^2.5.2",
     "vue-json-schema": "^1.1.0",
+    "vue-pdf": "^3.3.1",
     "vue-resource": "^1.5.0",
     "vue-router": "^3.0.1",
+    "vueshowpdf": "^1.1.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
