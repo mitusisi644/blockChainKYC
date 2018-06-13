@@ -1,5 +1,6 @@
 <template>
   <div class="lss-tab-con">
+    <i-table class="lss-table-list" size="large" :columns="tableColumns" :data="tableData"></i-table>
     <NavTag :title="'交易对手评测指数'"></NavTag>
     <div class="hot-con">
         <i-form :label-width="100">
@@ -20,7 +21,7 @@
 
             <i-col span="24" class="form-con-title">企业指数评级</i-col>
             <i-col span="11" class="lss-rate">
-              <span>企业素质</span>
+              <span>企业资信</span>
               <Rate allow-half v-model="pingceValidate.z">
                 <span style="color: #f5a623">{{ valueCustomText }}</span>
               </Rate>
@@ -57,7 +58,6 @@
           <div class="lss-auto-complete" @click="autoForm()"></div>
         </i-form>
    </div>
-    <i-table class="lss-table-list" size="large" :columns="tableColumns" :data="tableData"></i-table>
   </div>
 </template>
 
@@ -79,7 +79,7 @@
             self: this,
             tableData: [
               {
-                name: '企业素质',
+                name: '企业资信',
                 action:5
               },
               {
@@ -88,11 +88,11 @@
               },
               {
                 name: '经营管理',
-                action:2
+                action:3.5
               },
               {
                 name: '经济效益',
-                action:0
+                action:4.5
               }
             ],
             tableColumns: [
@@ -168,6 +168,6 @@
     height: auto;overflow: hidden;text-align:right;
   }
   .form-con-title { text-align: center; font-size:16px; font-weight:bold; padding:5px 0px; margin-bottom:10px; background:#fff;}
-  .lss-table-list { margin-top:20px; }
+  .lss-table-list { margin-bottom:20px; }
   .sub-btn { clear:both; width:100%; height:auto; overflow: hidden; text-align: right; border-top:1px solid #ccc; margin-top:30px; padding:10px 0px;}
 </style>

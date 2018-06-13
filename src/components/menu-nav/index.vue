@@ -3,7 +3,7 @@
     <div class="status-report">
       <router-link class="status-report-item" to="/finance">
         <p class="title">财务状况</p>
-        <p class="risk">风险度:<Tag color="green" size="small">Low</Tag></p>
+        <p class="risk">风险度:<Tag color="green" size="small">High</Tag></p>
         <p class="token-title">Last token:</p>
         <p class="token-val">0x76FE7655BACD</p>
       </router-link>
@@ -14,8 +14,8 @@
         <p class="token-val">0x76FE7655BACD</p>
       </router-link>
       <router-link class="status-report-item" to="/discuss">
-        <p class="title">市场增信</p>
-        <p class="risk">风险度:<Tag color="green" size="small">Low</Tag></p>
+        <p class="title">企业增信</p>
+        <p class="risk">风险度:<Tag color="green" size="small">High</Tag></p>
         <p class="token-title">Last token:</p>
         <p class="token-val">0x76FE7655BACD</p>
       </router-link>
