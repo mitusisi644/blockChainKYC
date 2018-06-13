@@ -159,7 +159,7 @@
     font-weight: bold;
   }
 
-  .lss-model-item { position: relative; width:100%;height:auto;overflow: hidden; border:1px solid #000; border-radius: 5px; border-bottom-width:8px;padding:5px 10px; margin-top:30px; background:#efeff6;}
+  .lss-model-item { position: relative; width:100%;height:auto;overflow: hidden; border:1px solid #000; border-radius: 5px; border-bottom-width:8px;padding:5px 10px; margin-top:30px; background:#fff;}
   .success-border { border-color:#19be6b;}
   .error-border { border-color: #ed3f14;}
   .warning-border { border-color: #f29100;}

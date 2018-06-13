@@ -1,7 +1,8 @@
 <template>
   <div class="lss-header-warp">
     <router-link to="/" class="logo"><img src="../../assets/images/logo.png" /></router-link>
-    <router-link to="/" class="title">Bcos Because</router-link>
+    <router-link to="/" class="title"></router-link>
+    <span class="comm-name"></span>
   </div>
 </template>
 
@@ -20,7 +21,7 @@
     z-index: 5;
     color:#fff;
     padding:0px 10px;
-    text-align: left;
+    text-align: center;
   }
   .lss-header-warp a {
     display: inline-block;
@@ -36,7 +37,8 @@
     width: auto;
     height: 30px;
   }
-  .title {
-
+  .comm-name {
+     margin:0 auto;
+     color:#333; font-size:20px; font-weight:700;
   }
 </style>

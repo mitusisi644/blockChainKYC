@@ -1,5 +1,6 @@
 <template>
   <div class="right-menu">
+    <div class="bp-title">中金汇理</div>
     <div class="status-report">
       <router-link class="status-report-item" to="/finance">
         <p class="title">财务状况</p>
@@ -131,6 +132,7 @@
     }
 </script>
 <style scoped>
+.bp-title { width:100%; height:auto; overflow:hidden; font-size:20px; font-weight:700; text-align:center; padding: 30px 0px 0px;}
   .aniShan {
     animation: shans 0s 0.5s infinite;
     -webkit-animation: shans 0s 0.5s infinite;

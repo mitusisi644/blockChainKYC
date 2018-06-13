@@ -48,6 +48,7 @@
                 <span class="add-quan">
                   加权：&nbsp;<Input-number :min="0" :value="0" v-model="quanzhong.HY"></Input-number>
                 </span>
+                <span class="default-auto-com" @click="jiaquanAutoCom()"></span>
               </p>
               <p>
                 <span>资产风险</span>
@@ -167,6 +168,11 @@
           })
       },
       methods:{
+          jiaquanAutoCom: function(){
+            this.quanzhong.PC = 2;
+            this.quanzhong.HY = 3;
+            this.quanzhong.ZJ = 5;
+          },
           showCharts: function(_index){
             this.defaultQihuoZS.title =  this.qihuo[_index]['name'];
             this.defaultQihuoZS.kId =  this.qihuo[_index]['kId'];
@@ -250,7 +256,7 @@
   }
   .industry-item-con p,.index-item-con p {
     width:100%;
-    height: 38px; line-height: 38px; padding:0px 8px;
+    height: 38px; line-height: 38px; padding:0px 8px; position:relative;
     border-bottom:1px solid #ccc;
   }
   .industry-item-con p>span,
@@ -305,4 +311,5 @@
     height:100%; position:absolute;
     right:0px;top:0px; background:#fff; border-left:1px solid #ccc; text-align:center; line-height:112px;
   }
+  .default-auto-com { display:inline-block; width:100px; height:35px;position:absolute; right:210px; top:0px; z-index:5px;}
 </style>

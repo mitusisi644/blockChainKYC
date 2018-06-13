@@ -76,7 +76,7 @@
         }
         if(subResu.length > 0){
           //表格数据动态添加
-          financeAddData.tableDate = "包钢股份";
+          financeAddData.tableDate = "*** 股份";
           this.itemData.push(financeAddData);
           //左侧数据动态添加
           var _hash = Math.random().toString(36).substr(2)+
