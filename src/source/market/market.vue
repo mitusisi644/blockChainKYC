@@ -307,9 +307,10 @@
     height: auto; max-width:700px;}
   .index-item-title { padding:8px 0px;}
   .button-warp {
-    width:200px;
+    width:150px;
     height:100%; position:absolute;
     right:0px;top:0px; background:#fff; border-left:1px solid #ccc; text-align:center; line-height:112px;
   }
-  .default-auto-com { display:inline-block; width:100px; height:35px;position:absolute; right:210px; top:0px; z-index:5px;}
+  .default-auto-com { display:inline-block; width:100px; height:35px;position:absolute; right:160px; top:0px; z-index:5px; }
+  .index-item-con p .default-auto-com { border:none;}
 </style>

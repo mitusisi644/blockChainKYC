@@ -43,7 +43,7 @@
         </p>
         <p>
           <span>所占权重</span>
-          <span class="lmi-num">30.2%</span>
+          <span class="lmi-num">40%</span>
         </p>
         <router-link to="/finance" class="lmi-links">
           <Icon type="chevron-right"></Icon>
@@ -65,7 +65,7 @@
         </p>
         <p>
           <span>所占权重</span>
-          <span class="lmi-num">32.8%</span>
+          <span class="lmi-num">25%</span>
         </p>
         <router-link to="/market" class="lmi-links">
           <Icon type="chevron-right"></Icon>
@@ -87,7 +87,7 @@
         </p>
         <p>
           <span>所占权重</span>
-          <span class="lmi-num">30%</span>
+          <span class="lmi-num">35%</span>
         </p>
         <router-link to="/discuss" class="lmi-links">
           <Icon type="chevron-right"></Icon>

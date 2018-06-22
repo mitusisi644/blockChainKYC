@@ -7,18 +7,21 @@
         <p class="risk">风险度:<Tag color="green" size="small">High</Tag></p>
         <p class="token-title">Last token:</p>
         <p class="token-val">0x76FE7655BACD</p>
+        <p class="bfb-val">40%</p>
       </router-link>
       <router-link class="status-report-item" to="/market">
         <p class="title">市场解析</p>
         <p class="risk">风险度:<Tag color="yellow" size="small">Mid</Tag></p>
         <p class="token-title">Last token:</p>
         <p class="token-val">0x76FE7655BACD</p>
+        <p class="bfb-val">25%</p>
       </router-link>
       <router-link class="status-report-item" to="/discuss">
         <p class="title">企业增信</p>
         <p class="risk">风险度:<Tag color="green" size="small">High</Tag></p>
         <p class="token-title">Last token:</p>
         <p class="token-val">0x76FE7655BACD</p>
+        <p class="bfb-val">35%</p>
       </router-link>
     </div>
     <div class="market-menus">
@@ -193,4 +196,5 @@
   .btn-span span {
     padding:5px 10px; border-radius: 2px; cursor: pointer;
   }
+  .status-report-item .bfb-val { position:absolute; font-size:30px; right:8px; top:50%; line-height:40px; margin-top:-20px; width:auto; display:inline-block; text-align:right; color:#ccc;}
 </style>
